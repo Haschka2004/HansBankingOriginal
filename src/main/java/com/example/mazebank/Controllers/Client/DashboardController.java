@@ -26,7 +26,8 @@ public class DashboardController implements Initializable {
     public Button send_money_btn;
 
     /**
-     * Diese Methode wird aufgerufen, wenn man das FXML-File als View aufrufen möchte.
+     * Diese Methode wird aufgerufen, wenn man das FXML-File als View aufrufen möchte, deswegen muss man das  Initializable Interface
+     * implementieren !
      * @param url
      * @param resourceBundle
      */

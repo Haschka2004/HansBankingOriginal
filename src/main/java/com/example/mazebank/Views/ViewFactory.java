@@ -3,7 +3,6 @@ package com.example.mazebank.Views;
 import com.example.mazebank.Controllers.Client.ClientController;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -13,6 +12,7 @@ public class ViewFactory {
     //Client Views
     private AnchorPane dashboardView;
     private AnchorPane transactionsView;
+    private AnchorPane accountsView;
     private final StringProperty clientSelectedMenuItem;
 
     public ViewFactory(){
@@ -20,8 +20,12 @@ public class ViewFactory {
     }
 
     public StringProperty getClientSelectedMenuItem(){
+
         return clientSelectedMenuItem;
     }
+
+    /* Client Views Scection
+     */
 
     public AnchorPane getDashboardView(){
         // Man checkt null, weil man nicht möchte, dass wenn man von einem Fenster wieder zu Dashboard geht es wieder neu lädt.
@@ -44,6 +48,18 @@ public class ViewFactory {
             }
         }
         return transactionsView;
+    }
+
+    public AnchorPane getAccountsView() {
+
+        if(accountsView == null){
+            try{
+                accountsView = new FXMLLoader(getClass().getResource("/fxml/Client/Accounts.fxml")).load();
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+        return accountsView;
     }
 
     public void showLoginWindow(){
