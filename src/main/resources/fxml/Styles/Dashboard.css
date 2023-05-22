@@ -23,7 +23,6 @@
 
 .account_view{
     -fx-background-color: #FFFFFF;
-    -fx-background-color: 10 0 0 10;
     -fx-padding: 10 0 10 0;
     -fx-alignment: center;
     -fx-border-width: 0 1 0 0;
@@ -135,7 +134,7 @@
 }
 
 .new_trans_container Label{
-    -fx-font: 1.3em;
+    -fx-font-size: 1.3em;
     -fx-font-family: "Calibri Light";
 }
 

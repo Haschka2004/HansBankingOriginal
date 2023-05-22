@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="750.0" prefWidth="850.0" styleClass="dashboard" stylesheets="@../Styles/Dashboard.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mazebank.Controllers.Client.DashboardController">
+<AnchorPane prefHeight="750.0" prefWidth="850.0" styleClass="dashboard" stylesheets="@../Styles/Dashboard.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mazebank.Controllers.Client.DashboardController">
    <Text fx:id="user_name" layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="user_name" text="Hi, User" />
    <Label fx:id="login_date" layoutX="460.0" layoutY="31.0" styleClass="date_lbl" text="Heute, 6.5.2023" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="30.0" />
    <Text layoutX="811.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Accounts Summary" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="90.0" />
