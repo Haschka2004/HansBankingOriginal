@@ -23,7 +23,7 @@ public class AdminMenuController implements Initializable {
         private void addListeners(){
         create_client_btn.setOnAction(event -> onCreateClient());
         clients_btn.setOnAction(actionEvent -> onClients());
-
+        deposit_btn.setOnAction(actionEvent -> onDeposit());
         }
 @FXML
         private void onCreateClient(){
@@ -32,6 +32,10 @@ public class AdminMenuController implements Initializable {
         }
         private void onClients(){
         Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.CLIENTS);
+        }
+
+        private  void onDeposit(){
+        Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.DEPOSIT);
         }
     }
 

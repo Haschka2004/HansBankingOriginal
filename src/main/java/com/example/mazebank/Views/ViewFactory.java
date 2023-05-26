@@ -11,6 +11,7 @@ import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -27,6 +28,7 @@ private AccountType loginAccountType;
     private AnchorPane createClientView;
     private final ObjectProperty<AdminMenuOptions> adminSelectedMenuItem;
     private AnchorPane clientsView;
+    private AnchorPane depositView;
 
 
     public ViewFactory(){
@@ -103,6 +105,16 @@ private AccountType loginAccountType;
 
 
     //Admin View Section
+    public AnchorPane getDepositView(){
+        if(depositView == null){
+            try{
+                depositView = new FXMLLoader(getClass().getResource("/fxml/Admin/Deposit.fxml")).load();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return depositView;
+    }
     public AnchorPane getClientsView() {
 
         if (clientsView == null) {
@@ -125,7 +137,9 @@ private AccountType loginAccountType;
         }
 
         Stage stage = new Stage();
+        stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/Images/HANSBanking.png"))));
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.setTitle("Hans Banking");
         stage.show();
     }

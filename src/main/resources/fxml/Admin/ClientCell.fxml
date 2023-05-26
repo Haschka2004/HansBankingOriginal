@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.Icon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane prefHeight="50.0" prefWidth="750.0" styleClass="client_cell_container"
+            stylesheets="@../Styles/ClientCell.css" xmlns="http://javafx.com/javafx/19"
+            xmlns:fx="http://javafx.com/fxml/1">
+   <Icon content="PERSON" layoutX="8.0" layoutY="11.0" prefHeight="31.0" prefWidth="55.0" AnchorPane.leftAnchor="14.0"
+         AnchorPane.topAnchor="9.0"/>
+   <HBox layoutX="100.0" layoutY="8.0" prefHeight="40.0" prefWidth="550.0" AnchorPane.leftAnchor="60.0"
+         AnchorPane.topAnchor="5.0">
+      <Label fx:id="fName_lbl" text="Harald"/>
+      <Label fx:id="lName_lbl" text="Baker"/>
+      <Label fx:id="pAddress_lbl" text="\@Baker1"/>
+      <Label fx:id="ch_acc_lbl" styleClass="acc_display_lbl" text="123456789"/>
+      <Label fx:id="sv_acc_lbl" styleClass="acc_display_lbl" text="098765432"/>
+      <Label fx:id="date_lbl" text="26.05.2023"/>
+   </HBox>
+   <Button fx:id="delete_btn" layoutX="662.0" layoutY="5.0" mnemonicParsing="false" styleClass="delete_btn"
+           text="Delete" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="5.0">
+      <graphic>
+         <Icon content="CLOSE"/>
+      </graphic>
+   </Button>
+</AnchorPane>

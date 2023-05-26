@@ -19,6 +19,7 @@ public class ClientMenuController implements Initializable {
 
      @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
+
          this.addListeners();
      }
 
@@ -38,7 +39,7 @@ public class ClientMenuController implements Initializable {
     }
 
     private void onAccounts(){
-         Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.ACCOUTNS);
+         Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.ACCOUNTS);
     }
 }
 
