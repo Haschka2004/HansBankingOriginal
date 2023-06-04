@@ -19,6 +19,7 @@ public class Model {
     private boolean clientLoginSuccesFlag;
 
     //Admin Data Section
+    private boolean adminLodinSuccessFlag;
 
     private Model(){
         this.viewFactory = new ViewFactory();
@@ -27,6 +28,7 @@ public class Model {
         this.clientLoginSuccesFlag = false;
         this.client = new Client("","","",null,null,null);
         //Admin Data Section
+        this.adminLodinSuccessFlag = false;
     }
 
     public static synchronized Model getInstance(){
@@ -44,13 +46,7 @@ public class Model {
         return databaseDriver;
     }
 
-    public AccountType getLoginAccountType() {
-        return loginAccountType;
-    }
 
-    public void setLoginAccountType(AccountType loginAccountType) {
-        this.loginAccountType = loginAccountType;
-    }
 
     /**
      * Client Mehthod Section
@@ -81,6 +77,27 @@ public class Model {
                 this.clientLoginSuccesFlag = true;
             }
 
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Admin Method Section
+     */
+    public boolean getAdminLoginSuccessFlag(){
+        return this.adminLodinSuccessFlag;
+    }
+    public void setAdminLodinSuccessFlag(boolean flag){
+        adminLodinSuccessFlag = flag;
+    }
+
+    public void evaluatedAdminCred(String username, String password){
+        ResultSet resultSet = databaseDriver.getAdminData(username,password);
+        try{
+            if(resultSet.isBeforeFirst()){
+                this.adminLodinSuccessFlag = true;
+            }
         }catch(Exception e){
             e.printStackTrace();
         }
