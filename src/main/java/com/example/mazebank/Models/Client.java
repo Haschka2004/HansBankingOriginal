@@ -53,4 +53,6 @@ public class Client {
     public ObjectProperty<LocalDate> dateCreatedProperty() {
         return dateCreated;
     }
+
+
 }
