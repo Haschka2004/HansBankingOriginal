@@ -1,6 +1,7 @@
 package com.example.mazebank.Controllers.Client;
 
 import com.example.mazebank.Models.Model;
+import com.example.mazebank.Models.Transaction;
 import com.example.mazebank.Views.TransactionCellFactory;
 import javafx.beans.binding.Bindings;
 import javafx.fxml.Initializable;
@@ -43,6 +44,7 @@ public class DashboardController implements Initializable {
         transaction_listview.setItems(Model.getInstance().getLatestTransaction());
         transaction_listview.setCellFactory(e -> new TransactionCellFactory());
         send_money_btn.setOnAction(event -> onSendMoney());
+        accountSummary();
     }
 
     private void bindData(){
@@ -84,5 +86,23 @@ public class DashboardController implements Initializable {
         amount_fld.setText("");
         message_fld.setText("");
 
+    }
+    //Berechnet alle aus und eingaben
+    private void accountSummary(){
+        double income = 0;
+        double expenses = 0;
+
+        if(Model.getInstance().getAllTransaction().isEmpty()){
+            Model.getInstance().setAllTransaction();
+        }
+        for(Transaction transaction:Model.getInstance().getAllTransaction()){
+            if(transaction.senderProperty().get().equals(Model.getInstance().getClient().payeeAddressProperty().get())){
+                expenses += transaction.amountProperty().get();
+            }else{
+                income += transaction.amountProperty().get();
+            }
+        }
+        income_lbl.setText("+ €"+income);
+        expense_lbl.setText("- €"+expenses);
     }
 }

@@ -54,8 +54,8 @@
 .alt_menu_btn {
     -fx-pref-height: 115;
     -fx-pref-height: 40;
-    -fx-background-color: #132A13;
-    -fx-text-fill:#FFFFFF;
+    -fx-background-color: #000000;
+    -fx-text-fill:#FFD700;
     -fx-font-size: 1.1em;
     -fx-alignment: center_left;
 }
@@ -73,7 +73,7 @@ alt_menu_btn FontAwesomeIconView{
 }
 .report_container Text{
     -fx-font-weight: bold;
-    -fx-fill: #132A13;
+    -fx-fill: #000000;
 }
 
 .report_container Label{

@@ -67,14 +67,14 @@ public class DatabaseDriver {
         try{
             statement = this.conn.createStatement();
             resultSet = statement.executeQuery("SELECT * FROM SavingsAccounts WHERE Owner= '"+pAddress+"';");
-            double newBalance;
+            double newBalance = 0;
 
             if(operation.equals("ADD")){
-                 newBalance = resultSet.getDouble("Balance") + amount;
+                 newBalance += resultSet.getDouble("Balance") + amount;
                 statement.executeUpdate("UPDATE SavingsAccounts SET Balance="+newBalance+" WHERE Owner ='"+pAddress+"';");
             }else {
                 if(resultSet.getDouble("Balance") >= amount){
-                    newBalance = resultSet.getDouble("Balance") - amount;
+                    newBalance += resultSet.getDouble("Balance") - amount;
                     statement.executeUpdate("UPDATE SavingsAccounts SET Balance="+newBalance+" WHERE Owner ='"+pAddress+"';");
                 }
             }
@@ -228,5 +228,17 @@ public class DatabaseDriver {
             e.printStackTrace();
         }
         return  resultSet;
+    }
+    public ResultSet deleteAccount(String pAddress){
+        Statement statement;
+        ResultSet resultSet = null;
+
+        try{
+            statement = this.conn.createStatement();
+            resultSet = statement.executeQuery("DELETE FROM Account WHERE Owner = '"+pAddress+"';");
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return resultSet;
     }
 }

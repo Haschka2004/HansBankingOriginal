@@ -10,9 +10,15 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class ViewFactory {
@@ -125,6 +131,25 @@ private AccountType loginAccountType;
             }
         }
         return clientsView;
+    }
+    public void showMessageWindow(String pAddress, String message){
+        StackPane pane = new StackPane();
+        HBox hBox = new HBox(5);
+        hBox.setAlignment(Pos.CENTER);
+        Label sender = new Label(pAddress);
+        Label msg = new Label(message);
+        hBox.getChildren().addAll(sender,msg);
+        pane.getChildren().add(hBox);
+        Scene scene = new Scene(pane,300,100);
+        Stage stage = new Stage();
+        stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/Images/HANSBanking.png"))));
+        stage.setResizable(false);
+        //Fender geht nicht sofort weg man muss es handeln
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setTitle("Message");
+        stage.setScene(scene);
+        stage.show();
+
     }
 
     private void createStage(FXMLLoader loader) {

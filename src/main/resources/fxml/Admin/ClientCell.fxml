@@ -7,12 +7,12 @@
 
 <AnchorPane prefHeight="50.0" prefWidth="750.0" styleClass="client_cell_container" stylesheets="@../Styles/ClientCell.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <HBox layoutX="100.0" layoutY="8.0" prefHeight="40.0" prefWidth="550.0" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="5.0">
-      <Label fx:id="fName_lbl" text="Harald" />
+      <Label fx:id="fName_lbl" prefHeight="23.0" prefWidth="60.0" text="Harald" />
       <Label fx:id="lName_lbl" text="Baker" />
       <Label fx:id="pAddress_lbl" text="\@Baker1" />
       <Label fx:id="ch_acc_lbl" styleClass="acc_display_lbl" text="123456789" />
       <Label fx:id="sv_acc_lbl" styleClass="acc_display_lbl" text="098765432" />
-      <Label fx:id="date_lbl" text="26.05.2023" />
+      <Label fx:id="date_lbl" prefHeight="23.0" prefWidth="99.0" text="26.05.2023" />
    </HBox>
    <Button fx:id="delete_btn" layoutX="662.0" layoutY="5.0" mnemonicParsing="false" styleClass="delete_btn" text="Delete" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="5.0" />
 </AnchorPane>

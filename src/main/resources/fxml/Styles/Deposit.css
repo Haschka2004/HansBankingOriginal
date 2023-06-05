@@ -22,10 +22,10 @@ TextField{
 }
 
 Button{
-    -fx-background-color: linear-gradient(to right,#132A13,#253F25);
+    -fx-background-color: linear-gradient(to right,#000000,#000000);
     -fx-effect: dropshadow(three-pass-box,#AAAAAA,3,0,0,3);
     -fx-font-size: 1.6em;
-    -fx-text-fill: #FFFFFF;
+    -fx-text-fill: #FFD700;
     -fx-font-family: "Calibri Light";
     -fx-pref-width: 200;
 }

@@ -30,4 +30,5 @@ public class ClientCellController implements Initializable {
         sv_acc_lbl.textProperty().bind(client.savingsAccountProperty().asString());
         date_lbl.textProperty().bind(client.dateCreatedProperty().asString());
     }
+
 }

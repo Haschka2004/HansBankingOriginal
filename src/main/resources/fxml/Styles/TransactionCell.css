@@ -24,10 +24,16 @@
     -fx-stroke: #EEEEEE;
 }
 
-.trans_amount_lbl{
+.message_btn{
     -fx-background-color: #132A13;
-    -fx-background-radius: 2;
     -fx-text-fill: #FFFFFF;
+
+}
+
+.trans_amount_lbl{
+    -fx-background-color: #000000;
+    -fx-background-radius: 2;
+    -fx-text-fill: #FFD700;
     -fx-padding: 5;
     -fx-font-weight: 700;
 }
